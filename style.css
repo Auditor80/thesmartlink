@@ -1,0 +1,89 @@
+/* Arquivo: style.css */
+
+/* Reset básico e corpo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Evita barras de rolagem desnecessárias */
+}
+
+/* 1. ESTILO DA BARRA DE CTA (O SNIPLY) */
+#sniply-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Altura da barra */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    box-sizing: border-box;
+    z-index: 99999; /* Garante que fique acima de tudo */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cta-content {
+    display: flex;
+    align-items: center;
+}
+
+.cta-brand {
+    font-weight: bold;
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+
+.cta-message {
+    font-size: 14px;
+}
+
+/* 2. ESTILO DO BOTÃO */
+.cta-button {
+    background-color: white;
+    color: #333; /* Cor do texto do botão */
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* 3. BOTÃO DE FECHAR */
+#close-cta {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* 4. ESTILO DO IFRAME (O CONTEÚDO DE TERCEIROS) */
+#sniply-iframe {
+    position: absolute;
+    top: 50px; /* Desloca o iFrame abaixo da barra de CTA */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px); /* Ocupa o restante da tela */
+    transition: top 0.3s;
+}
+
+/* Media query para telas menores (opcional) */
+@media (max-width: 600px) {
+    .cta-brand {
+        display: none; /* Esconde a marca em telas muito pequenas */
+    }
+    .cta-message {
+        font-size: 12px;
+    }
+}
