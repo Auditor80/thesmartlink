@@ -1,0 +1,23 @@
+# Arquivo: .htaccess
+
+# Liga o módulo de reescrita
+RewriteEngine On
+
+# Evita loop de redirecionamento e arquivos/diretórios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Regra principal de reescrita:
+# Pega qualquer coisa (exceto a URL base) e a trata como um código
+# Na verdade, este script é mais complexo, pois ele precisa de um banco de dados
+# para mapear um código curto para uma URL longa.
+
+# Para simplificar e manter a GRATUIDADE:
+# Vamos usar o formato simples de URL, onde a URL longa é passada.
+# Se você quiser o encurtamento, precisará de uma etapa extra (Banco de Dados).
+
+# Para este exemplo SIMPLES, você pode pular o .htaccess
+# E usar o link no formato:
+# https://seusite.com/index.php?url=https://site-destino.com
+
+# Se você quiser usar APENAS o ?url=... pode deixar este arquivo de lado.
